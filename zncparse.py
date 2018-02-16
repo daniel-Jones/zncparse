@@ -26,9 +26,11 @@ class Message:
             self.user = self.line.split("<", 1)[1].split(">", 1)[0];
         except:
             self.user = "ZNCLOG";
-            self.line = "[00:00:00] <ZNCLOG> disregard message";
+            self.line = "[99:99:99] <ZNCLOG> disregard message\n";
         self.time = self.line.split(" <", 1)[0].replace("[", "").replace("]", "");
         self.message = self.line.split("> ", 1)[1];
+        if self.message.endswith("\n"):
+            self.message = self.message[:-1];
 
     def getstructuredmsg(self):
         self.data = {};
