@@ -78,7 +78,7 @@ def getlogpaths():
                     break;
 
 if __name__ == "__main__":
-    debug = 1;
+    debug = 0;
     indir = "logs/parse";
     logfiles = [];
     messages = [];
